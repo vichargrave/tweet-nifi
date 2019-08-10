@@ -1,11 +1,11 @@
 # tweet-nifi
 
-Tweet-nifi provides the capability to receive tweets from the Twitter public feed and injest them into Elasticsearch.
+Tweet-nifi provides the capability to receive tweets from the Twitter public feed with NiFi and injest them into Elasticsearch.
 
 ## System Requirements
 
-1. Download (NiFi)[https://nifi.apache.org/download.html]{:target="_blank"}
-2. Download (Elasticsearch)[https://www.elastic.co/downloads/elasticsearch]{:target="_blank"}
+1. Download [NiFi](https://nifi.apache.org/download.html){:target="_blank"}
+2. Download [Elasticsearch](https://www.elastic.co/downloads/elasticsearch]){:target="_blank"}
 
 ## Installation
 
