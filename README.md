@@ -4,8 +4,8 @@ Tweet-nifi provides the capability to receive tweets from the Twitter public fee
 
 ## System Requirements
 
-1. Download [NiFi](https://nifi.apache.org/download.html){:target="_blank"}
-2. Download [Elasticsearch](https://www.elastic.co/downloads/elasticsearch]){:target="_blank"}
+1. Download [NiFi](https://nifi.apache.org/download.html)
+2. Download [Elasticsearch](https://www.elastic.co/downloads/elasticsearch)
 
 ## Installation
 
