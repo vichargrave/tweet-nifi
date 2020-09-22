@@ -13,7 +13,7 @@ You can load the tweet-nifi facility by following these steps:
 
 1. Click on the Upload Template button in the Operate pane.
 2. Click on the maginfying glass icon next to the text Select Template in the Upload Template pane.
-3. Navigate to the directory where you unpacked the tweet-nifi tarball. 4
+3. Navigate to the directory where you unpacked the tweet-nifi tarball. 
 4. Select the tweet-nifi.xml file.
 5. Click Open.
 6. Click on the UPLOAD button in the Upload Template pane.
