@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <template encoding-version="1.2">
     <description></description>
-    <groupId>c831b6bc-016a-1000-06ac-5689f47ae555</groupId>
+    <groupId>b7793db4-0174-1000-e75c-898615d98e5c</groupId>
     <name>tweet-nifi</name>
     <snippet>
         <connections>
@@ -155,40 +155,27 @@
                 <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
                 <descriptors>
                     <entry>
-                        <key>elasticsearch-http-url</key>
-                        <value>
-                            <name>elasticsearch-http-url</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>SSL Context Service</key>
-                        <value>
-                            <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
-                            <name>SSL Context Service</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>Username</key>
-                        <value>
-                            <name>Username</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>Password</key>
-                        <value>
-                            <name>Password</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>elasticsearch-http-connect-timeout</key>
-                        <value>
-                            <name>elasticsearch-http-connect-timeout</name>
-                        </value>
-                    </entry>
-                    <entry>
                         <key>elasticsearch-http-response-timeout</key>
                         <value>
                             <name>elasticsearch-http-response-timeout</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>put-es-id-attr</key>
+                        <value>
+                            <name>put-es-id-attr</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>put-es-type</key>
+                        <value>
+                            <name>put-es-type</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>put-es-index</key>
+                        <value>
+                            <name>put-es-index</name>
                         </value>
                     </entry>
                     <entry>
@@ -199,15 +186,46 @@
                         </value>
                     </entry>
                     <entry>
-                        <key>elasticsearch-http-proxy-host</key>
+                        <key>elasticsearch-http-url</key>
                         <value>
-                            <name>elasticsearch-http-proxy-host</name>
+                            <name>elasticsearch-http-url</name>
                         </value>
                     </entry>
                     <entry>
-                        <key>elasticsearch-http-proxy-port</key>
+                        <key>put-es-batch-size</key>
                         <value>
-                            <name>elasticsearch-http-proxy-port</name>
+                            <name>put-es-batch-size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>SSL Context Service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+                            <name>SSL Context Service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>elasticsearch-http-connect-timeout</key>
+                        <value>
+                            <name>elasticsearch-http-connect-timeout</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Username</key>
+                        <value>
+                            <name>Username</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>put-es-index-op</key>
+                        <value>
+                            <name>put-es-index-op</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>elasticsearch-http-proxy-host</key>
+                        <value>
+                            <name>elasticsearch-http-proxy-host</name>
                         </value>
                     </entry>
                     <entry>
@@ -223,21 +241,9 @@
                         </value>
                     </entry>
                     <entry>
-                        <key>put-es-id-attr</key>
+                        <key>elasticsearch-http-proxy-port</key>
                         <value>
-                            <name>put-es-id-attr</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>put-es-index</key>
-                        <value>
-                            <name>put-es-index</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>put-es-type</key>
-                        <value>
-                            <name>put-es-type</name>
+                            <name>elasticsearch-http-proxy-port</name>
                         </value>
                     </entry>
                     <entry>
@@ -247,15 +253,9 @@
                         </value>
                     </entry>
                     <entry>
-                        <key>put-es-batch-size</key>
+                        <key>Password</key>
                         <value>
-                            <name>put-es-batch-size</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>put-es-index-op</key>
-                        <value>
-                            <name>put-es-index-op</name>
+                            <name>Password</name>
                         </value>
                     </entry>
                 </descriptors>
@@ -264,34 +264,47 @@
                 <penaltyDuration>30 sec</penaltyDuration>
                 <properties>
                     <entry>
+                        <key>elasticsearch-http-response-timeout</key>
+                        <value>15 secs</value>
+                    </entry>
+                    <entry>
+                        <key>put-es-id-attr</key>
+                    </entry>
+                    <entry>
+                        <key>put-es-type</key>
+                        <value>_doc</value>
+                    </entry>
+                    <entry>
+                        <key>put-es-index</key>
+                        <value>tweets-${now():format('yyyy-MM-dd')}</value>
+                    </entry>
+                    <entry>
+                        <key>proxy-configuration-service</key>
+                    </entry>
+                    <entry>
                         <key>elasticsearch-http-url</key>
                         <value>http://localhost:9200</value>
                     </entry>
                     <entry>
+                        <key>put-es-batch-size</key>
+                        <value>100</value>
+                    </entry>
+                    <entry>
                         <key>SSL Context Service</key>
-                    </entry>
-                    <entry>
-                        <key>Username</key>
-                    </entry>
-                    <entry>
-                        <key>Password</key>
                     </entry>
                     <entry>
                         <key>elasticsearch-http-connect-timeout</key>
                         <value>5 secs</value>
                     </entry>
                     <entry>
-                        <key>elasticsearch-http-response-timeout</key>
-                        <value>15 secs</value>
+                        <key>Username</key>
                     </entry>
                     <entry>
-                        <key>proxy-configuration-service</key>
+                        <key>put-es-index-op</key>
+                        <value>index</value>
                     </entry>
                     <entry>
                         <key>elasticsearch-http-proxy-host</key>
-                    </entry>
-                    <entry>
-                        <key>elasticsearch-http-proxy-port</key>
                     </entry>
                     <entry>
                         <key>proxy-username</key>
@@ -300,27 +313,14 @@
                         <key>proxy-password</key>
                     </entry>
                     <entry>
-                        <key>put-es-id-attr</key>
-                    </entry>
-                    <entry>
-                        <key>put-es-index</key>
-                        <value>tweets-${now():format('yyyy-MM-dd')}</value>
-                    </entry>
-                    <entry>
-                        <key>put-es-type</key>
-                        <value>_doc</value>
+                        <key>elasticsearch-http-proxy-port</key>
                     </entry>
                     <entry>
                         <key>Character Set</key>
                         <value>UTF-8</value>
                     </entry>
                     <entry>
-                        <key>put-es-batch-size</key>
-                        <value>100</value>
-                    </entry>
-                    <entry>
-                        <key>put-es-index-op</key>
-                        <value>index</value>
+                        <key>Password</key>
                     </entry>
                 </properties>
                 <runDurationMillis>0</runDurationMillis>
@@ -364,12 +364,6 @@
                 <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
                 <descriptors>
                     <entry>
-                        <key>Twitter Endpoint</key>
-                        <value>
-                            <name>Twitter Endpoint</name>
-                        </value>
-                    </entry>
-                    <entry>
                         <key>Consumer Key</key>
                         <value>
                             <name>Consumer Key</name>
@@ -388,21 +382,9 @@
                         </value>
                     </entry>
                     <entry>
-                        <key>Access Token Secret</key>
-                        <value>
-                            <name>Access Token Secret</name>
-                        </value>
-                    </entry>
-                    <entry>
                         <key>Languages</key>
                         <value>
                             <name>Languages</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>Terms to Filter On</key>
-                        <value>
-                            <name>Terms to Filter On</name>
                         </value>
                     </entry>
                     <entry>
@@ -412,9 +394,27 @@
                         </value>
                     </entry>
                     <entry>
+                        <key>Twitter Endpoint</key>
+                        <value>
+                            <name>Twitter Endpoint</name>
+                        </value>
+                    </entry>
+                    <entry>
                         <key>Locations to Filter On</key>
                         <value>
                             <name>Locations to Filter On</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Terms to Filter On</key>
+                        <value>
+                            <name>Terms to Filter On</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Access Token Secret</key>
+                        <value>
+                            <name>Access Token Secret</name>
                         </value>
                     </entry>
                 </descriptors>
@@ -423,36 +423,36 @@
                 <penaltyDuration>30 sec</penaltyDuration>
                 <properties>
                     <entry>
-                        <key>Twitter Endpoint</key>
-                        <value>Sample Endpoint</value>
-                    </entry>
-                    <entry>
                         <key>Consumer Key</key>
                         <value>mQokxNK8verbGqfAafkOEYf9S</value>
                     </entry>
                     <entry>
-                      <key>Consumer Secret</key>
-		      <value>2hDtaHuhEBWEFGLeLhRY3gO1mWj1BTLTRpUWiSJMNw20r3xq6b</value>
+                        <key>Consumer Secret</key>
+                        <value>2hDtaHuhEBWEFGLeLhRY3gO1mWj1BTLTRpUWiSJMNw20r3xq6b</value>
                     </entry>
                     <entry>
                         <key>Access Token</key>
                         <value>61114279-oirCfu3tPd6ptiuiGWlypkrgnrKqYlsIFiS0KHl8a</value>
                     </entry>
                     <entry>
-                      <key>Access Token Secret</key>
-		      <value>X0pbywP4bE7jxQzVwcgu5Z9qFA5OIP2XYsfJ5DYnlefHE</value>
-                    </entry>
-                    <entry>
                         <key>Languages</key>
-                    </entry>
-                    <entry>
-                        <key>Terms to Filter On</key>
                     </entry>
                     <entry>
                         <key>IDs to Follow</key>
                     </entry>
                     <entry>
+                        <key>Twitter Endpoint</key>
+                        <value>Sample Endpoint</value>
+                    </entry>
+                    <entry>
                         <key>Locations to Filter On</key>
+                    </entry>
+                    <entry>
+                        <key>Terms to Filter On</key>
+                    </entry>
+                    <entry>
+                        <key>Access Token Secret</key>
+                        <value>X0pbywP4bE7jxQzVwcgu5Z9qFA5OIP2XYsfJ5DYnlefHE</value>
                     </entry>
                 </properties>
                 <runDurationMillis>0</runDurationMillis>
@@ -550,6 +550,12 @@
                 <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
                 <descriptors>
                     <entry>
+                        <key>jolt-spec</key>
+                        <value>
+                            <name>jolt-spec</name>
+                        </value>
+                    </entry>
+                    <entry>
                         <key>jolt-transform</key>
                         <value>
                             <name>jolt-transform</name>
@@ -568,9 +574,9 @@
                         </value>
                     </entry>
                     <entry>
-                        <key>jolt-spec</key>
+                        <key>pretty_print</key>
                         <value>
-                            <name>jolt-spec</name>
+                            <name>pretty_print</name>
                         </value>
                     </entry>
                     <entry>
@@ -579,27 +585,11 @@
                             <name>Transform Cache Size</name>
                         </value>
                     </entry>
-                    <entry>
-                        <key>pretty_print</key>
-                        <value>
-                            <name>pretty_print</name>
-                        </value>
-                    </entry>
                 </descriptors>
                 <executionNode>ALL</executionNode>
                 <lossTolerant>false</lossTolerant>
                 <penaltyDuration>30 sec</penaltyDuration>
                 <properties>
-                    <entry>
-                        <key>jolt-transform</key>
-                        <value>jolt-transform-chain</value>
-                    </entry>
-                    <entry>
-                        <key>jolt-custom-class</key>
-                    </entry>
-                    <entry>
-                        <key>jolt-custom-modules</key>
-                    </entry>
                     <entry>
                         <key>jolt-spec</key>
                         <value>[
@@ -636,12 +626,22 @@
 </value>
                     </entry>
                     <entry>
-                        <key>Transform Cache Size</key>
-                        <value>1</value>
+                        <key>jolt-transform</key>
+                        <value>jolt-transform-chain</value>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-class</key>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-modules</key>
                     </entry>
                     <entry>
                         <key>pretty_print</key>
                         <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Transform Cache Size</key>
+                        <value>1</value>
                     </entry>
                 </properties>
                 <runDurationMillis>0</runDurationMillis>
@@ -693,12 +693,6 @@
                         </value>
                     </entry>
                     <entry>
-                        <key>Path Not Found Behavior</key>
-                        <value>
-                            <name>Path Not Found Behavior</name>
-                        </value>
-                    </entry>
-                    <entry>
                         <key>Null Value Representation</key>
                         <value>
                             <name>Null Value Representation</name>
@@ -708,6 +702,12 @@
                         <key>twitter.text</key>
                         <value>
                             <name>twitter.text</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Path Not Found Behavior</key>
+                        <value>
+                            <name>Path Not Found Behavior</name>
                         </value>
                     </entry>
                 </descriptors>
@@ -724,16 +724,16 @@
                         <value>auto-detect</value>
                     </entry>
                     <entry>
-                        <key>Path Not Found Behavior</key>
-                        <value>ignore</value>
-                    </entry>
-                    <entry>
                         <key>Null Value Representation</key>
                         <value>empty string</value>
                     </entry>
                     <entry>
                         <key>twitter.text</key>
                         <value>$.text</value>
+                    </entry>
+                    <entry>
+                        <key>Path Not Found Behavior</key>
+                        <value>ignore</value>
                     </entry>
                 </properties>
                 <runDurationMillis>0</runDurationMillis>
@@ -760,5 +760,5 @@
             <type>org.apache.nifi.processors.standard.EvaluateJsonPath</type>
         </processors>
     </snippet>
-    <timestamp>05/18/2019 08:32:08 PDT</timestamp>
+    <timestamp>09/22/2020 13:31:31 PDT</timestamp>
 </template>
