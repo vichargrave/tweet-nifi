@@ -5,97 +5,248 @@ if [[ $# -ne 1 ]] ; then
     exit
 fi
 
-curl -H 'Content-Type: application/json' -XPUT 'http://'$1'/_template/tweets' -d '
+curl -H 'Content-Type: application/json' -XPUT 'http://'$1'/_index_template/tweets' -d '
 {
   "index_patterns": ["tweets-*"],
-  "mappings": {
-      "properties": {
-        "timestamp_ms": {
-          "type": "date",
-          "format": "epoch_millis"
-        },
-        "created_at": {
-          "type": "text",
-          "fields": {
-            "keyword": { 
-              "type":  "keyword"
+    "template" : {
+      "mappings" : {
+        "properties" : {
+          "created_at" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
             }
-          }
-        },
-        "time_zone": {
-          "type": "keyword" 
-        },
-        "utc_offset": {
-          "type": "keyword"
-        },
-        "id_str": {
-          "type": "keyword"
-        },
-        "text": {
-          "type": "text",
-          "fields": {
-            "keyword": { 
-              "type":  "keyword"
+          },
+          "favorited" : {
+            "type" : "boolean"
+          },
+          "id_str" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
             }
-          }
-        },
-        "favorited": {
-          "type": "boolean"
-        },
-        "retweeted": {
-          "type": "boolean"
-        },
-        "possibly_sensitive": {
-          "type": "boolean"
-        },
-        "lang": {
-          "type": "keyword"
-        },
-        "user_id_str": {
-          "type": "keyword"
-        },
-        "user_name": {
-          "type": "keyword"
-        },
-        "user_screen_name": {
-          "type": "keyword",
-          "fields": {
-            "keyword": { 
-              "type":  "keyword"
+          },
+          "lang" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
             }
-          }
-        },
-        "user_description": {
-          "type": "text"
-        },
-        "user_verified": {
-          "type": "boolean"
-        },
-        "users_followers_count": {
-          "type": "integer"
-        },
-        "users_friends_count": {
-          "type": "integer"
-        },
-        "users_listed_count": {
-          "type": "integer"
-        },
-        "user_favourites_count": {
-          "type": "integer"
-        },
-        "user_created_at": {
-          "type": "text",
-          "fields": {
-            "keyword": { 
-              "type":  "keyword"
+          },
+          "possibly_sensitive" : {
+            "type" : "boolean"
+          },
+          "retweeted" : {
+            "type" : "boolean"
+          },
+          "source" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
             }
+          },
+          "text" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "timestamp_ms" : {
+            "type" : "date",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "url_0" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "url_1" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "url_2" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "url_3" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "url_display_0" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "url_display_1" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "url_display_2" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "url_display_3" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "url_expanded_0" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "url_expanded_1" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "url_expanded_2" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "url_expanded_3" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "user_created_at" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "user_description" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "user_favourites_count" : {
+            "type" : "long"
+          },
+          "user_followers_count" : {
+            "type" : "long"
+          },
+          "user_friends_count" : {
+            "type" : "long"
+          },
+          "user_id_str" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "user_listed_count" : {
+            "type" : "long"
+          },
+          "user_name" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "user_screen_name" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "user_verified" : {
+            "type" : "boolean"
           }
-        },
-        "user_lang": {
-          "type": "keyword"
         }
       }
     }
- }'
+  }
+}'
+
 
 echo
