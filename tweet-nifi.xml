@@ -424,15 +424,15 @@
                 <properties>
                     <entry>
                         <key>Consumer Key</key>
-                        <value>mQokxNK8verbGqfAafkOEYf9S</value>
+                        <value>REPLACE_ME</value>
                     </entry>
                     <entry>
                         <key>Consumer Secret</key>
-                        <value>2hDtaHuhEBWEFGLeLhRY3gO1mWj1BTLTRpUWiSJMNw20r3xq6b</value>
+                        <value>REPLACE_ME</value>
                     </entry>
                     <entry>
                         <key>Access Token</key>
-                        <value>61114279-oirCfu3tPd6ptiuiGWlypkrgnrKqYlsIFiS0KHl8a</value>
+                        <value>REPLACE_ME</value>
                     </entry>
                     <entry>
                         <key>Languages</key>
@@ -452,7 +452,7 @@
                     </entry>
                     <entry>
                         <key>Access Token Secret</key>
-                        <value>X0pbywP4bE7jxQzVwcgu5Z9qFA5OIP2XYsfJ5DYnlefHE</value>
+                        <value>REPLACE_ME</value>
                     </entry>
                 </properties>
                 <runDurationMillis>0</runDurationMillis>
