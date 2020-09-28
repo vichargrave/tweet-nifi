@@ -36,8 +36,6 @@ The Nifi canvas should look like this when you are done:
 
 ![](Nifi_full_canvas.png)
 
-Click on the play button in the **NiFi Flow** panel to start ingesting tweets.  You can then click on the stop button to halt ingestion when you are done.
-
 ## Run Pipeline
 
 Click on the **Start** button in the **Operate** pane in the NiFi Console, which should be labelled **NiFi Flow**.  After several seconds you should see the *In*, *Read/Write*, *Out*, and *Tasks/Time* field totals increasing.  Verify that your tweet stream is being indexed but running a query like this in Kibana:
