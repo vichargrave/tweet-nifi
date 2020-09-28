@@ -11,7 +11,7 @@ Tweet-nifi provides the capability to receive tweets from the Twitter public fee
 
 1. Start Elasticsearch instance.
 1. Start your NiFi instance.
-1. Navigate to the NiFi console in your browser, which will be *http://localhost:8080*.
+1. Navigate to the NiFi console in your browser, which will be *http://localhost:8080/nifi*.
 1. Open a browser window to your NiFi instance.
 1. Click on the **Upload Template** button in the **Operate** pane.
 1. Click on the maginfying glass icon next to the text **Select Template** in the **Upload Template** pane.
@@ -133,6 +133,6 @@ Tweets fields are mapped to output fields in **Jolt Specification** field the **
       }
     ]
 
-Note that this mapping allows for 3 URLs in the tweet that are flattened out at the top level of the JSON.
+Note that this mapping allows for 3 URLs in the tweet that are flattened out at the top level of the JSON. When a tweet lacks URLs, like the earlier example tqweet, the URL fields are simply omitted.
 
 If you want to map more or fewer fields, or use different Elasticsearch field names, you can change this specification as needed. If and when you update the field mapping, you must restart Nifi.
