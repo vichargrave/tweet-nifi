@@ -12,7 +12,6 @@ Tweet-nifi provides the capability to receive tweets from the Twitter public fee
 1. Start Elasticsearch instance.
 1. Start your NiFi instance.
 1. Navigate to the NiFi console in your browser, which will be *http://localhost:8080/nifi*.
-1. Open a browser window to your NiFi instance.
 1. Click on the **Upload Template** button in the **Operate** pane.
 1. Click on the maginfying glass icon next to the text **Select Template** in the **Upload Template** pane.
 1. Navigate to the directory where you unpacked the tweet-nifi tarball. 
