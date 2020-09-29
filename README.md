@@ -10,7 +10,7 @@ Tweet-nifi provides the capability to receive tweets from the Twitter public fee
 ## Installation
 
 1. Start your Elasticsearch instance.
-1. Run the *tweet_templates.sh* script to create the mapping for the tweet indices.
+1. Run the *tweets_template.sh* script to create the mapping for the tweet indices.
 1. Start your NiFi instance.
 1. Navigate to the NiFi console in your browser, which will be *http://localhost:8080/nifi*.
 1. Click on the **Upload Template** button in the **Operate** pane.
