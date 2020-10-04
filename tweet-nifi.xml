@@ -195,9 +195,9 @@
         "screen_name": "user_screen_name",
         "description": "user_description",
         "verified": "user_verified",
-        "followers_count": "users_followers_count",
-        "friends_count": "users_friends_count",
-        "listed_count": "users_listed_count",
+        "followers_count": "user_followers_count",
+        "friends_count": "user_friends_count",
+        "listed_count": "user_listed_count",
         "favourites_count": "user_favourites_count",
         "created_at": "user_created_at",
         "lang": "user_lang"
