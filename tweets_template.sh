@@ -5,14 +5,15 @@ if [[ $# -ne 1 ]] ; then
     exit
 fi
 
-curl -H 'Content-Type: application/json' -XPUT 'http://'$1'/_index_template/tweets' -d '
+curl -H 'Content-Type: application/json' -XPUT 'http://'$1'/_index_template/tweets-template' -d '
 {
   "index_patterns": ["tweets-*"],
     "template" : {
       "mappings" : {
         "properties" : {
           "created_at" : {
-            "type" : "text",
+            "type" : "date",
+            "format": "E MMM dd HH:mm:ss z yyyy||E MMM dd HH:mm:ss Z yyyy",
             "fields" : {
               "keyword" : {
                 "type" : "keyword",
@@ -58,15 +59,6 @@ curl -H 'Content-Type: application/json' -XPUT 'http://'$1'/_index_template/twee
           },
           "text" : {
             "type" : "text",
-            "fields" : {
-              "keyword" : {
-                "type" : "keyword",
-                "ignore_above" : 256
-              }
-            }
-          },
-          "timestamp_ms" : {
-            "type" : "date",
             "fields" : {
               "keyword" : {
                 "type" : "keyword",
@@ -183,7 +175,8 @@ curl -H 'Content-Type: application/json' -XPUT 'http://'$1'/_index_template/twee
             }
           },
           "user_created_at" : {
-            "type" : "text",
+            "type" : "date",
+            "format": "E MMM dd HH:mm:ss z yyyy||E MMM dd HH:mm:ss Z yyyy",
             "fields" : {
               "keyword" : {
                 "type" : "keyword",
