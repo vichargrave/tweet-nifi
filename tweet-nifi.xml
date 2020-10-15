@@ -179,9 +179,6 @@
     "operation": "shift",
     "spec": {
       "created_at": "created_at",
-      "time_zone": "time_zone",
-      "utc_offset": "utc_offset",
-      "timestamp_ms": "timestamp_ms",
       "id_str": "id_str",
       "text": "text",
       "source": "source",
